@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="rectangle" width="1000" height="500" style="border:1px solid #000000"></canvas>
+<script>
+
+    let Rectangle = function (width, height) {
+        this.getArea = function () {
+            return width * height;
+        };
+
+        this.perimeter = function () {
+            return (width + height) * 2;
+        };
+
+        this.drawRectangle = function (width, height) {
+            let c = document.getElementById('rectangle');
+            let ctx = c.getContext("2d");
+            let chieurong = width * 100;
+            let chieucao = height * 100;
+            ctx.beginPath();
+            ctx.lineWidth = 5;
+            ctx.fillStyle = "#fafafa";
+            ctx.fill();
+            ctx.rect(50, 50, chieurong, chieucao);
+            ctx.strokeStyle = "#000000";
+            ctx.stroke();
+        }
+
+
+    }
+
+    let rectangle = new Rectangle(3, 1);
+    alert("dien tich la : " + rectangle.getArea());
+    alert("chu vi la : " + rectangle.perimeter());
+    rectangle.drawRectangle(3, 1)
+
+
+</script>
+</body>
+</html>
